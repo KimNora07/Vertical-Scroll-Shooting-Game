@@ -17,4 +17,20 @@ public class PlayerBullet : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Ememy enemy = collision.gameObject.GetComponent<Ememy>();
+        if (enemy != null)
+        {
+            Debug.Log(enemy.type);
+            this.Explode();
+            enemy.Explode();
+        }
+    }
+
+    private void Explode()
+    {
+        Destroy(this.gameObject);
+    }
 }
