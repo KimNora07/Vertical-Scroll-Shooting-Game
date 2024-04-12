@@ -6,8 +6,14 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 1f;
     public GameObject playerBulletPrefab;
+    public Gun gun;
 
-    [SerializeField] private Transform firePoint;
+    public void Init(Gun gun)
+    {
+        this.gun = gun;
+        this.gun.transform.SetParent(this.transform);
+        this.gun.transform.localPosition = Vector3.zero;
+    }
 
     private void Update()
     {
@@ -27,11 +33,7 @@ public class PlayerController : MonoBehaviour
 
     private void ShootBullet()
     {
-        // 총알 생성
-        GameObject go = Instantiate(this.playerBulletPrefab);
-        // 총알의 초기 위치 설정
-        //go.transform.position = this.transform.position;
-        go.transform.position = this.firePoint.position;
-
+        // 내가 가지고 있는 총이 총알을 발사
+        this.gun.Shoot();
     }
 }

@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class GameMain : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject[] gunPrefabs;
+    public PlayerController player;
+
+    // Awake - Init - Start - Update
+    public void Init(GameEnums.eGunType selectedGunType)
     {
-        
+        // 총을 만든다
+        Gun gun = this.CreateGun(selectedGunType);
+        // 플레이어에게 총을 지급한다
+        this.player.Init(gun);
     }
 
-    // Update is called once per frame
-    void Update()
+    private Gun CreateGun(GameEnums.eGunType gunType)
     {
-        
+        int index = (int)gunType;
+        GameObject prefab = this.gunPrefabs[index];
+        GameObject go = Instantiate(prefab);
+        Gun gun = go.GetComponent<Gun>();
+        return gun;
     }
 }

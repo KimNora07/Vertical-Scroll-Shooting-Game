@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class App : MonoBehaviour
 {
-    private string version = "0.2.0";
+    private string version = "0.1.0";
 
     private void Awake()
     {

@@ -123,37 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &470150821
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 470150822}
-  m_Layer: 0
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &470150822
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 470150821}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.749, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 744664007}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &744664003
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   playerBulletPrefab: {fileID: 2547868625456591174, guid: 12c9afb5f64d6d04ea69ac4ac5568da2, type: 3}
-  firePoint: {fileID: 470150822}
+  gun: {fileID: 0}
 --- !u!95 &744664005
 Animator:
   serializedVersion: 5
@@ -273,8 +242,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 470150822}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1214946461
@@ -306,6 +274,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9107849c0c53ff4591dce4a4b258c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunPrefabs:
+  - {fileID: 8811775957937938377, guid: 803f554e11856194eaef67e45b448fce, type: 3}
+  - {fileID: 1257946025723067407, guid: 2a5b1c65b6bf35a4f9f809cb0db95703, type: 3}
+  player: {fileID: 744664004}
 --- !u!4 &1214946463
 Transform:
   m_ObjectHideFlags: 0

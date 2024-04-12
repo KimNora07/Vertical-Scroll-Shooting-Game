@@ -17,7 +17,7 @@ public class TitleMain : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            SceneManager.LoadScene("02_Game");
+            SceneManager.LoadScene("02_Lobby");
         }
     }
 
